@@ -132,8 +132,8 @@ h2 {
     font-family: julee;
     top: 2.4mm;
     font-size: 12pt;
-    left: 11mm;
-    width: 42mm;
+    left: 9mm;
+    width: 44mm;
     text-align: center;
     line-height: 18pt;
 }
@@ -223,7 +223,11 @@ h2 {
     font-weight: 300;
     font-size: 7pt;
     white-space:pre-wrap;
-    line-height: 8.2pt;
+    line-height: 8pt;
+}
+
+.isLong {
+    line-height: 7pt !important
 }
 
 .flavor {
@@ -233,6 +237,7 @@ h2 {
 	margin-top: 2mm;
     text-align: center;
     width: 100%;
+    line-height: 7pt;
 }
 
 .artist {
@@ -321,7 +326,7 @@ em {
 
 .attachment .title {
     transform: rotate(-90deg);
-    left:-15.7mm;
+    left:-16.7mm;
     top: 51mm;
 }
 
@@ -363,13 +368,13 @@ em {
 .holding .traits {
     width: 47.5mm;
     left: 12mm;
-    top:4mm
+    top:2.5mm
 }
 
 .holding .text {
     width: 47.5mm;
     left: 12mm;
-    top:8mm
+    top:6mm
 }
 
 .holding .text_clan {
@@ -379,7 +384,7 @@ em {
 
 .holding .title {
     transform: rotate(-90deg);
-    left:-15.7mm;
+    left:-17mm;
     top: 32mm;
 }
 

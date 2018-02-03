@@ -64,14 +64,22 @@ function addCard (id) {
     };
     
     let military = '';
+    let political = '';
+    
+    if (card.type == 'character') {
+        military = '<span class="military">-</span>'
+         political = '<span class="political">-</span>'
+    };
+    
     if (card.military != undefined) {
         military = '<span class="military">' + card.military + '</span>'
     };
     
-    let political = '';
     if (card.political != undefined) {
         political = '<span class="political">' + card.political + '</span>'
     };
+    
+    
     
     let military_bonus = '';
     if (card.military_bonus != undefined) {
@@ -144,8 +152,15 @@ function addCard (id) {
         }
         traits = '<span class="traits">' + traits + '</span>'
     };
+    let text = ''
+    if (card.text != undefined) {
+        let isLong ='';
+        if (card.text.length > 250){ isLong = 'isLong'};
+        text = '<span class="text '+isLong+'">' + card.text + '<br/>'+ flavor + '</span>'
+    }
+   
     
-	let newHtml = ('<div class="card ' + card.type + '"><div class="illustration" style="background-image: url( ' + card.pack_cards[0].image_url + ');"></div><div class="clan_top ' + card.clan + '"></div><div class="clan_bottom ' + card.clan + '"></div><img class="template" src="'+ card.type + '.svg"><span class="title">' + uniqueness + card.name  + '</span>' + clan_svg + cost + strength + strength_bonus + '<span class="type">' + card.type + '</span>' + military + military_bonus + political + political_bonus + clan_textbox_svg + glory + traits + '<span class="text">' + card.text + '<br/>'+ flavor + '</span><span class="artist">illus. ' + card.pack_cards[0].illustrator + '</span>' + fate + honor + influence_pool + element  +'<span class="setid">' + influence + set + ':' + card.pack_cards[0].position + '</span>');
+	let newHtml = ('<div class="card ' + card.type + '"><div class="illustration" style="background-image: url( ' + card.pack_cards[0].image_url + ');"></div><div class="clan_top ' + card.clan + '"></div><div class="clan_bottom ' + card.clan + '"></div><img class="template" src="'+ card.type + '.svg"><span class="title">' + uniqueness + card.name  + '</span>' + clan_svg + cost + strength + strength_bonus + '<span class="type">' + card.type + '</span>' + military + military_bonus + political + political_bonus + clan_textbox_svg + glory + traits + text + '<span class="artist">illus. ' + card.pack_cards[0].illustrator + '</span>' + fate + honor + influence_pool + element  +'<span class="setid">' + influence + set + ':' + card.pack_cards[0].position + '</span>');
 	$('#cards').append( newHtml );
     replaceInlineSymbol(/\[conflict-military]/g,'<img class="inline-symbol" src="https://d1u5p3l4wpay3k.cloudfront.net/l5r_gamepedia_en/8/86/Military.png" />');
     replaceInlineSymbol(/\[conflict-political]/g,'<img class="inline-symbol" src="https://d1u5p3l4wpay3k.cloudfront.net/l5r_gamepedia_en/e/e3/Political.png" />');
@@ -154,6 +169,15 @@ function addCard (id) {
     replaceInlineSymbol(/\[element-void]/g,'<img class="inline-symbol" src="https://d1u5p3l4wpay3k.cloudfront.net/l5r_gamepedia_en/4/46/Void.png" />');
     replaceInlineSymbol(/\[element-earth]/g,'<img class="inline-symbol" src="https://d1u5p3l4wpay3k.cloudfront.net/l5r_gamepedia_en/1/1e/Earth.png" />');
     replaceInlineSymbol(/\[element-fire]/g,'<img class="inline-symbol" src="https://d1u5p3l4wpay3k.cloudfront.net/l5r_gamepedia_en/3/30/Fire.png" />');
+    replaceInlineSymbol(/\[clan-lion]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/lion.svg" />');
+    replaceInlineSymbol(/\[clan-unicorn]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/unicorn.svg" />');
+    replaceInlineSymbol(/\[clan-crab]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/crab.svg" />');
+    replaceInlineSymbol(/\[clan-crane]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/crane.svg" />');
+    replaceInlineSymbol(/\[clan-phoenix]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/phoenix.svg" />');
+    replaceInlineSymbol(/\[clan-dragon]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/dragon.svg" />');
+    replaceInlineSymbol(/\[clan-scorpion]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/scorpion.svg" />');
+    replaceInlineSymbol(/\[clan-neutral]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/neutral.svg" />');
+    replaceInlineSymbol(/\undefined/g,'');
 }
 
 function replaceInlineSymbol (symbol, symbol_img) {
