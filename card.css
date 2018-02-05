@@ -2,6 +2,10 @@
 body {
 	font: 14px Montserrat;
     font-weight: 400;
+    background-color:floralwhite;
+}
+form {
+    max-width: 600px
 }
 
 h1 {
@@ -12,6 +16,7 @@ h2 {
     margin: 0;
     padding: 0;
     font-family: Julee;
+    text-decoration: underline;
 }
 
 .card {
@@ -485,6 +490,7 @@ opacity: 0;
 }
 
 @media print {
+    body {background: white}
 
 	.card {
 		box-shadow: none;
