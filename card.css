@@ -311,7 +311,7 @@ em {
 
 
 .low-ink .illustration, .low-ink .honor, .low-ink .influence_pool, .low-ink .stronghold_symbol, .low-ink .top_symbol, .low-ink .glory, .low-ink .title_clan, .low-ink .military, .low-ink .military_bonus, .low-ink .political, .low-ink .political_bonus {
-    filter: grayscale(1) brightness(1.2);
+    filter: grayscale(1) contrast(0.8) brightness(1.2);
     color: black;
 }
 
