@@ -232,6 +232,10 @@ h2 {
     line-height: 7pt !important
 }
 
+.isLong .flavor {
+    line-height: 6pt;
+}
+
 .flavor {
     font-size: 6pt;
 	font-style: italic;
@@ -301,12 +305,23 @@ h2 {
 
 .inline-symbol {
     height:8pt;
+    margin-top: -3pt;
+    margin-bottom: -3pt;
     vertical-align: middle;
     filter: grayscale(1) brightness(0.0);
 }
 
 em {
     font-weight: 800;
+}
+
+hr {
+margin: 1pt;
+opacity: 0;
+}
+
+.flavor hr {
+   margin: 0;
 }
 
 
@@ -328,7 +343,7 @@ em {
 }
 
 .attachment .text, .attachment .traits {
-    width: 48mm;
+    width: 50mm;
     left: 11mm
 }
 

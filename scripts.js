@@ -154,8 +154,10 @@ function addCard (id) {
     };
     let text = ''
     if (card.text != undefined) {
+        let flavorlength = 0;
+        if (card.pack_cards[0].flavor != undefined) { flavorlength = card.pack_cards[0].flavor.length};
         let isLong ='';
-        if (card.text.length > 250){ isLong = 'isLong'};
+        if ((card.text.length + flavorlength) > 200){ isLong = 'isLong'};
         text = '<span class="text '+isLong+'">' + card.text + '<br/>'+ flavor + '</span>'
     }
    
@@ -178,6 +180,7 @@ function addCard (id) {
     replaceInlineSymbol(/\[clan-scorpion]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/scorpion.svg" />');
     replaceInlineSymbol(/\[clan-neutral]/g,'<img class="inline-symbol" src="https://fiveringsdb.com/static/svg/clan/neutral.svg" />');
     replaceInlineSymbol(/\undefined/g,'');
+    replaceInlineSymbol(/\n/g,'<hr>')
 }
 
 function replaceInlineSymbol (symbol, symbol_img) {
