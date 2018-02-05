@@ -21,14 +21,14 @@ function getCard(id) {
 }
 
 function addCard (id) {
-    let cardnr = 0;
-    
+    let cardnr = undefined;
     for (let i = 0; i < (carddata.size - 1) ; i++) { 
-        if (carddata.records[i].id == id) {
+        if (carddata.records[i].id == id || carddata.records[i].name == id || carddata.records[i].name_canonical == id) {
             cardnr = i;
             break;
         };
     };
+ 
     let card = getCard(cardnr);
     console.log(card);
     
@@ -197,6 +197,14 @@ function submitCards() {
         console.log(id);
         addCard(id);
     };
-    
 };
 
+function toggleLowInk() {
+    $("[name=lowInk]").change(function(){
+        if ( this.checked ){
+            $(".card").addClass('low-ink');
+        } else {
+            $('.low-ink').removeClass('low-ink');
+        };
+    })
+};

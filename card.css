@@ -300,6 +300,7 @@ h2 {
 .inline-symbol {
     height:8pt;
     vertical-align: middle;
+    filter: grayscale(1) brightness(0.0);
 }
 
 em {
@@ -307,8 +308,16 @@ em {
 }
 
 
-.low-ink {
+.low-ink .illustration, .low-ink .honor, .low-ink .influence_pool, .low-ink .stronghold_symbol, .low-ink .top_symbol, .low-ink .glory, .low-ink .title_clan, .low-ink .military, .low-ink .military_bonus, .low-ink .political, .low-ink .political_bonus {
     filter: grayscale(1) brightness(1.2);
+}
+
+.low-ink .clan_top, .low-ink .clan_bottom {
+    background-color: lightgray;
+}
+
+.low-ink .setid, .low-ink .artist {
+    color: black;
 }
 
 .attachment .clan_top  {
@@ -462,12 +471,11 @@ em {
 	.card {
 		box-shadow: none;
 		border: 1px dashed black;
+        border-radius: 0;
+        margin: 0;
+        page-break-inside: avoid;
 	}
-	
-	.cards div:nth-of-type(9n) {
-		page-break-after: always ;
-		background-color: pink;
-	}
+
 	
 	form {
 		display: none;
