@@ -233,14 +233,6 @@ h2 {
     line-height: 9pt;
 }
 
-.isLong {
-    line-height: 7pt !important
-}
-
-.isLong .flavor {
-    line-height: 6pt;
-}
-
 .flavor {
     font-size: 6pt;
 	font-style: italic;
@@ -248,7 +240,7 @@ h2 {
 	margin-top: 2mm;
     text-align: center;
     width: 100%;
-    line-height: 7pt;
+    line-height: 6pt;
 }
 
 .artist {
@@ -477,9 +469,9 @@ opacity: 0;
 }
 
 .stronghold .text {
-    top: 57mm;
+    top: 56mm;
     left: 4mm;
-    width: 55mm
+    width: 55mm;
 }
 .stronghold .text_clan {
     bottom: 2mm
